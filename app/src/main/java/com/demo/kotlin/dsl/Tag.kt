@@ -36,6 +36,6 @@ open class Tag(private val name: String, private val value: String? = null) : No
     }
 
     operator fun String.invoke(value: String? = null, block: Tag.() -> Unit) {
-        childTagList.add(Tag(this, value).apply(block))
+        this@Tag.childTagList.add(Tag(this@invoke, value).apply(block))
     }
 }

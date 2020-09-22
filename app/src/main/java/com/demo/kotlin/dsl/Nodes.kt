@@ -4,11 +4,11 @@ fun html(block: Tag.() -> Unit): Node {
     return Tag("html").apply(block)
 }
 
-fun Tag.head(block: Tag.() -> Unit) {
+fun Tag.head(block: Head.() -> Unit) {
     this.childTagList.add(Head().apply(block))
 }
 
-fun Tag.body(block: Tag.() -> Unit) {
+fun Tag.body(block: Body.() -> Unit) {
     this.childTagList.add(Body().apply(block))
 }
 
