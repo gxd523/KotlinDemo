@@ -4,6 +4,7 @@
     package="com.demo.kotlin">
 
     <application
+        android:name=".MyApplication"
         android:icon="@android:mipmap/sym_def_app_icon"
         android:label="KotlinDemo"
         android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
