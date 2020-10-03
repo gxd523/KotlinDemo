@@ -7,13 +7,16 @@ import kotlin.coroutines.*
  */
 fun main() {
     val createGenerator = generator { start: Int ->
-        repeat(6) {
+        (0..5).forEach {
             yield(start + it)
         }
     }
 
     val generator = createGenerator(10)
-    generator.iterator().forEach(::println)
+    val iterator = generator.iterator()
+    while (iterator.hasNext()) {
+        iterator.next().let(::println)
+    }
 }
 
 fun <T> generator(block: suspend GeneratorScope<T>.(T) -> Unit): (T) -> Generator<T> {
@@ -79,7 +82,6 @@ class GeneratorIterator<T>(override val param: T, private val block: suspend Gen
     }
 
     override fun resumeWith(result: Result<Any?>) {
-        println("resumeWith...${result.getOrNull()}")
         state = State.Done
         result.getOrThrow()
 
