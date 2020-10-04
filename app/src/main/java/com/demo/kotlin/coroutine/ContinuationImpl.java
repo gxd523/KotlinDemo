@@ -9,7 +9,6 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlinx.coroutines.DelayKt;
 
 /**
  * 模拟协程实现
@@ -42,7 +41,7 @@ public class ContinuationImpl implements Continuation<Object> {
                 case 1: {
                     LogKt.log(result);
                     LogKt.log(2);
-                    result = DelayKt.delay(1000, this);
+                    result = SuspendFunctionsKt.delay(1000, this);
                     label++;
                     if (isSuspended(result)) return;
                 }
