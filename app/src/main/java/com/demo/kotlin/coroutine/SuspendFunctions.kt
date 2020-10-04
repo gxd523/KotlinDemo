@@ -1,6 +1,6 @@
 package com.demo.kotlin.coroutine
 
-import com.bennyhuo.kotlin.coroutinebasics.utils.now
+import com.bennyhuo.kotlin.coroutinebasics.utils.log
 import kotlin.concurrent.thread
 import kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED
 import kotlin.coroutines.intrinsics.suspendCoroutineUninterceptedOrReturn
@@ -38,5 +38,3 @@ suspend fun delay(time: Long) = suspendCoroutine<Unit> {
         it.resume(Unit)
     }
 }
-
-fun log(msg: Any) = println("${now()} [${Thread.currentThread().name}] $msg")
