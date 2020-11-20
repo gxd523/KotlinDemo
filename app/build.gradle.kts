@@ -6,6 +6,7 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlin-noarg")
     id("kotlin-allopen")
+    id("kotlin-kapt")
 }
 
 noArg {
@@ -67,8 +68,9 @@ dependencies {
     val kotlinVersion = "1.4.10"
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
 //    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-//    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
-    implementation("androidx.core:core-ktx:1.3.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation("androidx.core:core-ktx:1.3.2")
     implementation("com.google.code.gson:gson:2.8.6")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
